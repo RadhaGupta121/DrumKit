@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+        *{
+            background-color: rgb(44, 44, 44);
+        }
+        h1{
+            font-size: 4rem;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:white;
+            gap:2px;
+            
+           margin: auto;
+           display: flex;
+           justify-content: center;
+        }
+        .btn{
+            font-size: 2rem;
+            height: 8rem;
+            padding: 2px;
+            width: 10rem;
+            background-color: grey;
+            color: red;
+           
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
+            gap:12px;
+            align-items: center;
+            height:90vh;
+        }
+        #guitar{
+            background-image: url('img/guitar.png');
+            background-size: cover;
+        }
+        #tabla{
+            background-image: url('img/tabla.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #stand{
+            background-image: url('img/stand.png');
+            background-size: cover;
+        }
+        #standtabla{
+               background-image: url('img/stand\ tabla.png');
+               background-size: cover;
+        }
+        #drum{
+            background-image: url('img/drum.png');
+               background-size: cover; 
+        }
+       </style>
+    </head>
+    <body>
+       <h1>Drum Kit</h1>
+        <div class="buttons">
+            <button class="btn" id="guitar"></button>
+            <button class="btn" id="tabla"></button>
+            <button class="btn" id="stand"></button>
+            <button class="btn" id="standtabla"></button>
+            <button class="btn" id="drum"></button>
+        </div>
+        <script>
+            let arr=['Audio/mixkit-angelic-swell-presentation-2672.wav','Audio/mixkit-arabian-mystery-harp-notification-2489.wav',
+            'Audio/mixkit-bad-joke-drums-2893.wav' ,'Audio/mixkit-bass-guitar-single-note-2331.wav','Audio/mixkit-guitar-notification-alert-2320.wav',
+        'Audio/mixkit-guitar-stroke-down-slow-2339.wav'];
+        let audio;
+      let buttons=  document.querySelectorAll('button').forEach((items)=>{
+        items.addEventListener('click',()=>{
+          if(items.id=='drum')
+          {
+            audio=new Audio(arr[0])
+          }
+          if(items.id=='guitar')audio=new Audio(arr[1]);
+          if(items.id=='tabla')audio=new Audio(arr[2]);
+          if(items.id=='stand')audio=new Audio(arr[3]);
+          if(items.id=='standtabla')audio=new Audio(arr[4]);
+            
+           audio.play();
+        })
+      });
+    //   console.log(buttons);
+      
+        </script>
+    </body>
+</html>
